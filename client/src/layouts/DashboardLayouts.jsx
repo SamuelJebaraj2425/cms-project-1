@@ -4,20 +4,25 @@ import AuthContext from '../context/AuthContext';
 
 const PATHS = [
 	{ path: '/dashboard/intro', text: '🚩 intro' },
-	{ path: '/dashboard/counter', text: '1️⃣ counter' },
-	{ path: '/dashboard/stop-watch', text: '⌚ stop watch' },
-	{ path: '/dashboard/calc', text: '🟰 calculator' },
-	{ path: '/dashboard/todo-list', text: '📝 todo list' },
-	{ path: '/dashboard/profile', text: '🧑 profile' },
+	// { path: '/dashboard/counter', text: '1️⃣ counter' },
+	// { path: '/dashboard/stop-watch', text: '⌚ stop watch' },
+	// { path: '/dashboard/calc', text: '🟰 calculator' },
+	// { path: '/dashboard/todo-list', text: '📝 todo list' },
+	// { path: '/dashboard/profile', text: '🧑 profile' },
+    { path: '/dashboard/user-stats', text: '🧑‍🏫 stats' },
+	{ path: '/dashboard/add', text: '🆕 Add new ' },
+	{ path: '/dashboard/display', text: '📃 All content ' },
+	{ path: '/dashboard/favorites', text: '⭐ My Favorites ' },
+	{ path: '/dashboard/my-content', text: '😍 My Items ' },
 ];
 
-const DASHBOARD_PATHS = [
-	{ path: '/dashboard/cms/user-stats', text: '🧑‍🏫 stats' },
-	{ path: '/dashboard/cms/add', text: '🆕 Add new ' },
-	{ path: '/dashboard/cms/display', text: '📃 All content ' },
-	{ path: '/dashboard/cms/favorites', text: '⭐ My Favorites ' },
-	{ path: '/dashboard/cms/my-content', text: '😍 My Items ' },
-];
+// const DASHBOARD_PATHS = [
+// 	{ path: '/dashboard/cms/user-stats', text: '🧑‍🏫 stats' },
+// 	{ path: '/dashboard/cms/add', text: '🆕 Add new ' },
+// 	{ path: '/dashboard/cms/display', text: '📃 All content ' },
+// 	{ path: '/dashboard/cms/favorites', text: '⭐ My Favorites ' },
+// 	{ path: '/dashboard/cms/my-content', text: '😍 My Items ' },
+// ];
 
 export default function DashboardLayouts() {
 	const location = useLocation();
@@ -46,10 +51,10 @@ export default function DashboardLayouts() {
 						</Link>
 					))}
 				</nav>
-				<span className="mt-5 pt-5 border-t-2 border-t-gray-200 text-3xl font-extrabold mb-8 text-white tracking-wide text-left">
+				{/* <span className="mt-5 pt-5 border-t-2 border-t-gray-200 text-3xl font-extrabold mb-8 text-white tracking-wide text-left">
 					CMS
-				</span>
-				<nav className="flex flex-col gap-0.5 w-full">
+				</span> */}
+				{/* <nav className="flex flex-col gap-0.5 w-full">
 					{DASHBOARD_PATHS.map((value, index) => (
 						<Link
 							key={index}
@@ -65,7 +70,7 @@ export default function DashboardLayouts() {
 							{value.text.charAt(0).toUpperCase() + value.text.slice(1)}
 						</Link>
 					))}
-				</nav>
+				</nav> */}
 				<button
 					onClick={logout}
 					className="mt-auto w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold shadow transition"
