@@ -11,7 +11,7 @@ function BasicLayouts() {
 							<FcNook />
 						</Link>
 					</span>{' '}
-					notes
+					Diary
 				</div>
 				<div className="mt-3 sm:mt-0 flex gap-3">
 					<div className="bg-white border-2 text-black px-4 py-2 rounded shadow cursor-pointer">
@@ -26,7 +26,7 @@ function BasicLayouts() {
 				<Outlet />
 			</main>
 			<footer className="fixed z-30 w-screen bottom-0 bg-white text-gray-600 py-4 text-center mt-8 border-t shadow">
-				© {new Date().getFullYear()} Notes App. All rights reserved.
+				© {new Date().getFullYear()} Diary App. All rights reserved.
 			</footer>
 		</>
 	);

@@ -8,7 +8,7 @@ export default function Home() {
 					title="ceo of MVIII TECH (OPC) Pvt. Ltd."
 					className="text-base font-semibold text-blue-700 mb-2 tracking-wide"
 				>
-					<sup className="text-xs text-blue-400">by</sup> Avinash ( BYTS )
+					<sup className="text-xs text-blue-400">by</sup> RPS
 				</h4>
 				<h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-900 drop-shadow">
 					The Beginner level React Project
@@ -19,9 +19,9 @@ export default function Home() {
 					This could be your very first best project to start after learning{' '}
 					<strong>REACT</strong>.
 					<br />
-					<span className="text-red-500 font-semibold inline-block animate-typing border-r-2 border-blue-700 ml-1">
+					{/* <span className="text-red-500 font-semibold inline-block animate-typing border-r-2 border-blue-700 ml-1">
 						Code like a pro
-					</span>
+					</span> */}
 				</p>
 				<div className="flex gap-4">
 					<Link
@@ -33,7 +33,7 @@ export default function Home() {
 					</Link>
 					<a
 						className="shadow-lg shadow-gray-200 inline-flex items-center px-8 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200"
-						href="https://github.com/AvinashKumar3000/project-notes"
+						href="https://github.com/SamuelJebaraj2425/cms-project-1/tree/main"
 						target="_blank"
 					>
 						Explore the code
