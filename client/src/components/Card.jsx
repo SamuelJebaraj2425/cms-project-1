@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import StorageContext from '../../context/StorageContext';
+import StorageContext from '../context/StorageContext';
 
 export default function Card({ item, index }) {
 	const [isFavorite, setIsFavorite] = useState(item?.isFavorite);
@@ -99,14 +99,3 @@ export default function Card({ item, index }) {
 		</div>
 	);
 }
-
-/* Add to your CSS (e.g., App.css or Card.css):
-
-.playcard {
-    transition: transform 0.2s cubic-bezier(.4,2,.6,1);
-}
-.playcard:hover {
-    transform: scale(1.07) rotate(-2deg);
-    box-shadow: 0 16px 40px 0 rgba(0,0,0,0.18);
-}
-*/
