@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import StorageContext from '../../context/StorageContext';
-import Card from '../../components/cms/Card';
+import Card from '../../components/Card';
 
 export default function DisplayAll() {
 	const { items } = useContext(StorageContext); // Access function from context
