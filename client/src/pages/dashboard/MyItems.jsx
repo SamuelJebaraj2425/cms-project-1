@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import StorageContext from '../../context/StorageContext';
-import Card from '../../components/cms/Card';
+import Card from '../../components/Card';
 import AuthContext from '../../context/AuthContext';
 
 export default function MyItems() {

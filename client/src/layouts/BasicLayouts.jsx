@@ -1,31 +1,32 @@
 import { Link, Outlet } from 'react-router';
 import { FcNook } from 'react-icons/fc';
+import { FaAddressBook } from "react-icons/fa6";
 
 function BasicLayouts() {
 	return (
 		<>
-			<header className="fixed w-screen z-20 bg-white text-black py-4 shadow-lg flex flex-col sm:flex-row items-center justify-between px-6">
+			<header className="fixed w-screen z-20 bg-gray-900/70 backdrop-blur-2xl text-white py-4 shadow-lg flex flex-col sm:flex-row items-center justify-between px-6">
 				<div className="text-2xl font-semibold flex items-center gap-2">
 					<span role="img" aria-label="notes">
 						<Link to={'/home'}>
-							<FcNook />
+							<FaAddressBook size={30} color="#8b5cf6" />
 						</Link>
 					</span>{' '}
 					Diary
 				</div>
 				<div className="mt-3 sm:mt-0 flex gap-3">
-					<div className="bg-white border-2 text-black px-4 py-2 rounded shadow cursor-pointer">
-						<Link to={'/login'}>sign-in</Link>
+					<div className="bg-gray-900/70 border-2 border-violet-700 text-white px-4 py-1 rounded-lg  cursor-pointer backdrop-blur-2xl">
+						<Link to={'/login'}>Sign-in</Link>
 					</div>
-					<div className="bg-black text-white px-4 py-2 rounded shadow cursor-pointer">
-						<Link to={'/sign-up'}>sign-up</Link>
+					<div className="bg-gray-900/70 border-2 border-blue-400 text-white px-4 py-1 rounded-lg  cursor-pointer backdrop-blur-2xl">
+						<Link to={'/sign-up'}>Sign-up</Link>
 					</div>
 				</div>
 			</header>
-			<main className="h-screen bg-white">
+			<main className="h-screen bg-gray-800/70 backdrop-blur-2xl">
 				<Outlet />
 			</main>
-			<footer className="fixed z-30 w-screen bottom-0 bg-white text-gray-600 py-4 text-center mt-8 border-t shadow">
+			<footer className="fixed z-30 w-screen bottom-0 bg-gray-900/70 backdrop-blur-2xl text-gray-400 py-4 text-center mt-8 border-t border-gray-700 shadow">
 				© {new Date().getFullYear()} Diary App. All rights reserved.
 			</footer>
 		</>

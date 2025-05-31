@@ -2,7 +2,8 @@
 
 :root {
 	box-sizing: border-box;
-	font-family: monospace;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size:0.9rem;
 }
 
 body {

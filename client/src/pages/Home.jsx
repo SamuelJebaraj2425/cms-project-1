@@ -2,37 +2,36 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 	return (
-		<div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-blue-200">
-			<div className="relative z-10 max-w-screen-sm mx-auto p-10 bg-white rounded-xl shadow-2xl border border-blue-100">
-				<h4
-					title="ceo of MVIII TECH (OPC) Pvt. Ltd."
-					className="text-base font-semibold text-blue-700 mb-2 tracking-wide"
-				>
-					<sup className="text-xs text-blue-400">by</sup> RPS
-				</h4>
-				<h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-900 drop-shadow">
+		<div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-slate-900 via-purple-950 to-gray-900">
+			<div
+				className="relative z-10 max-w-screen-sm mx-auto p-10 rounded-xl shadow-2xl border border-gray-800"
+				style={{
+					background: "rgba(30, 41, 59, 0.4)",
+					backdropFilter: "blur(16px)",
+					WebkitBackdropFilter: "blur(16px)",
+					border: "1px solid rgba(255, 255, 255, 0.15)"
+				}}
+			>
+				<h1 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-gray-100 drop-shadow">
 					The Beginner level React Project
 					<br />
-					<span className="text-blue-600">Sleek CMS</span>
+					<span className="text-blue-400">Sleek CMS</span>
 				</h1>
-				<p className="text-lg text-gray-700 mb-8">
+				<p className="text-lg text-gray-300 mb-8">
 					This could be your very first best project to start after learning{' '}
-					<strong>REACT</strong>.
+					<strong className="text-white">REACT</strong>.
 					<br />
-					{/* <span className="text-red-500 font-semibold inline-block animate-typing border-r-2 border-blue-700 ml-1">
-						Code like a pro
-					</span> */}
 				</p>
 				<div className="flex gap-4">
 					<Link
-						className="shadow-lg shadow-blue-200 inline-flex items-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200"
+						className="shadow-lg shadow-violet-900 inline-flex items-center px-8 py-3 bg-violet-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition-all duration-200"
 						to="/login"
 						rel="noopener noreferrer"
 					>
 						Get started
 					</Link>
 					<a
-						className="shadow-lg shadow-gray-200 inline-flex items-center px-8 py-3 bg-gray-100 text-gray-800 font-semibold rounded-lg hover:bg-gray-200 transition-all duration-200"
+						className="shadow-lg shadow-white-900 inline-flex items-center px-8 py-3 bg-blue-800 text-gray-100 font-semibold rounded-lg hover:bg-blue-700 transition-all duration-200"
 						href="https://github.com/SamuelJebaraj2425/cms-project-1/tree/main"
 						target="_blank"
 					>
