@@ -43,7 +43,7 @@ export default function Card({ item, index }) {
 						<div className="w-full px-4 text-center mt-1 flex-1 flex items-center justify-center">
 							<p className="text-gray-500 text-xs mb-2 w-full bg-gray-100 rounded-lg border border-gray-200 px-3 py-2 shadow-sm">{item.desc}</p>
 						</div>
-						{/* Context info */}
+				
 			
 			{/* Bottom actions */}
 			<div className="flex gap-2 w-full justify-center absolute bottom-8 left-1/2 transform -translate-x-1/2">
