@@ -31,7 +31,7 @@ export default function AddNewItem() {
 	}
 
 	return (
-		<div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 py-12 px-4">
+		<div className="flex flex-wrap gap-5 ">
 			<form
 				onSubmit={handleSubmit}
 				className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-lg space-y-6 border border-gray-100"
@@ -82,6 +82,11 @@ export default function AddNewItem() {
 					</button>
 				</div>
 			</form>
+			<div className="text-center mt-6">
+				<p className="text-gray-500 text-sm">
+					Need help?{' '}
+				</p>
+			</div>
 		</div>
 	);
 }

@@ -30,62 +30,65 @@ export default function UserStats() {
 	};
 
 	return (
-		<div className="max-w-6xl mx-auto mt-12 p-8 bg-white rounded-xl shadow-2xl text-2xl">
-			{/* Title */}
-			<h2 className="text-5xl font-extrabold text-gray-800 text-center mb-10">
-				User Login Statistics
-			</h2>
+		<div
+			className="bg-white rounded-xl shadow-2xl text-2xl flex items-center justify-center"
+			style={{ minWidth: '75vw', minHeight: '80vh', margin: 'auto', marginTop: '5vh' }}
+		>
+			<div className="w-full h-full p-8">
+				{/* Title */}
+				<h2 className="text-5xl font-extrabold text-gray-800 text-center mb-10">
+					User Login Statistics
+				</h2>
 
-			{/* Table Container */}
-			<div >
-				<table className="min-w-full table-auto rounded-lg bg-white overflow-hidden shadow-md text-2xl">
-					<thead className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white text-2xl">
-						<tr>
-							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">Email</th>
-							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
-								Logins
-							</th>
-							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
-								Login Timestamps
-							</th>
-						</tr>
-					</thead>
-					<tbody className="divide-y divide-gray-200 text-2xl">
-						{userStats.length === 0 ? (
+				{/* Table Container */}
+				<div>
+					<table className="min-w-full h-full table-auto rounded-lg bg-white overflow-hidden shadow-md text-2xl">
+						<thead className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white text-2xl">
 							<tr>
-								<td colSpan={3} className="px-6 py-6 text-center text-gray-500">
-									No user stats available.
-								</td>
+								<th className="px-6 py-4 text-left text-base font-medium tracking-wider">Email</th>
+								<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
+									Logins
+								</th>
+								<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
+									Login Timestamps
+								</th>
 							</tr>
-						) : (
-							userStats.map((user) => (
-								<tr
-									key={user.email}
-								>
-									<td className="px-6 py-4 text-base text-gray-800">{user.email}</td>
-									<td className="px-6 py-4 text-base text-indigo-600 font-semibold">
-										{user.actions}
-									</td>
-									{/* Display all login timestamps */}
-									<td className="px-6 py-4 text-base text-gray-600">
-										{/* Check if user has logins */}
-										{user.logins.length === 0 ? (
-											<p>No logins recorded.</p>
-										) : (
-											<div className="max-h-48 overflow-y-auto pr-2">
-												<ul>
-													{user.logins.map((login, index) => (
-														<li key={index}>{formatDate(login)}</li>
-													))}
-												</ul>
-											</div>
-										)}
+						</thead>
+						<tbody className="divide-y divide-gray-200 text-2xl">
+							{userStats.length === 0 ? (
+								<tr>
+									<td colSpan={3} className="px-6 py-6 text-center text-gray-500">
+										No user stats available.
 									</td>
 								</tr>
-							))
-						)}
-					</tbody>
-				</table>
+							) : (
+								userStats.map((user) => (
+									<tr key={user.email}>
+										<td className="px-6 py-4 text-base text-gray-800">{user.email}</td>
+										<td className="px-6 py-4 text-base text-indigo-600 font-semibold">
+											{user.actions}
+										</td>
+										{/* Display all login timestamps */}
+										<td className="px-6 py-4 text-base text-gray-600">
+											{/* Check if user has logins */}
+											{user.logins.length === 0 ? (
+												<p>No logins recorded.</p>
+											) : (
+												<div className="max-h-48 overflow-y-auto pr-2">
+													<ul>
+														{user.logins.map((login, index) => (
+															<li key={index}>{formatDate(login)}</li>
+														))}
+													</ul>
+												</div>
+											)}
+										</td>
+									</tr>
+								))
+							)}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	);
