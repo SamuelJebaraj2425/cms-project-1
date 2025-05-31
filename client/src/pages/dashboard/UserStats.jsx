@@ -8,50 +8,85 @@ export default function UserStats() {
 		// Get all history entries
 		const allHistory = historyService.getAllHistory();
 
-		// Aggregate stats per user
+		// Aggregate stats per user and collect all login timestamps
 		const statsMap = {};
-		allHistory.forEach(({ email }) => {
+		allHistory.forEach(({ email, timestamp }) => {
 			if (!statsMap[email]) {
-				statsMap[email] = { email, actions: 0 };
+				statsMap[email] = { email, actions: 0, logins: [] };
 			}
 			statsMap[email].actions += 1;
+
+			// Store each login timestamp
+			statsMap[email].logins.push(timestamp);
 		});
 
 		setUserStats(Object.values(statsMap));
 	}, []);
 
+	// Format date and time in a readable format
+	const formatDate = (timestamp) => {
+		const date = new Date(timestamp);
+		return date.toLocaleString(); // Format as 'MM/DD/YYYY, HH:MM:SS AM/PM'
+	};
+
 	return (
-		<div className="max-w-2xl mx-auto mt-8 p-6 bg-white rounded-lg shadow">
-			<h2 className="text-2xl font-bold mb-6 text-gray-800">User Stats</h2>
-			<table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
-				<thead>
-					<tr className="bg-gray-100">
-						<th className="py-3 px-4 text-left font-semibold text-gray-700">Email</th>
-						<th className="py-3 px-4 text-left font-semibold text-gray-700">
-							Logged in count
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{userStats.length === 0 ? (
+		<div className="max-w-6xl mx-auto mt-12 p-8 bg-white rounded-xl shadow-2xl text-2xl">
+			{/* Title */}
+			<h2 className="text-5xl font-extrabold text-gray-800 text-center mb-10">
+				User Login Statistics
+			</h2>
+
+			{/* Table Container */}
+			<div >
+				<table className="min-w-full table-auto rounded-lg bg-white overflow-hidden shadow-md text-2xl">
+					<thead className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white text-2xl">
 						<tr>
-							<td colSpan={2} className="py-4 px-4 text-center text-gray-500">
-								No user stats available.
-							</td>
+							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">Email</th>
+							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
+								Logins
+							</th>
+							<th className="px-6 py-4 text-left text-base font-medium tracking-wider">
+								Login Timestamps
+							</th>
 						</tr>
-					) : (
-						userStats.map((user) => (
-							<tr
-								key={user.email}
-								className="border-t border-gray-100 hover:bg-gray-50"
-							>
-								<td className="py-3 px-4">{user.email}</td>
-								<td className="py-3 px-4">{user.actions}</td>
+					</thead>
+					<tbody className="divide-y divide-gray-200 text-2xl">
+						{userStats.length === 0 ? (
+							<tr>
+								<td colSpan={3} className="px-6 py-6 text-center text-gray-500">
+									No user stats available.
+								</td>
 							</tr>
-						))
-					)}
-				</tbody>
-			</table>
+						) : (
+							userStats.map((user) => (
+								<tr
+									key={user.email}
+								>
+									<td className="px-6 py-4 text-base text-gray-800">{user.email}</td>
+									<td className="px-6 py-4 text-base text-indigo-600 font-semibold">
+										{user.actions}
+									</td>
+									{/* Display all login timestamps */}
+									<td className="px-6 py-4 text-base text-gray-600">
+										{/* Check if user has logins */}
+										{user.logins.length === 0 ? (
+											<p>No logins recorded.</p>
+										) : (
+											<div className="max-h-48 overflow-y-auto pr-2">
+												<ul>
+													{user.logins.map((login, index) => (
+														<li key={index}>{formatDate(login)}</li>
+													))}
+												</ul>
+											</div>
+										)}
+									</td>
+								</tr>
+							))
+						)}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }
