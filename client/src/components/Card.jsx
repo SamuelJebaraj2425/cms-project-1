@@ -35,44 +35,18 @@ export default function Card({ item, index }) {
 				{isFavorite && <span className="text-yellow-400 text-2xl drop-shadow">⭐</span>}
 			</div>
 			{/* Center image */}
-			<div className="flex-1 flex flex-col justify-center items-center mt-8 mb-2">
-				<img
-					src={item.imgUrl}
-					alt={item.name}
-					className="w-28 h-28 object-cover rounded-lg shadow"
-					style={{ border: '2px solid #e2e8f0', background: '#fff' }}
-				/>
-			</div>
-			{/* Name and desc */}
-			<div className="w-full px-4 text-center">
+			{/* Name at the top */}
+			<div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-full px-4 text-center pointer-events-none z-10">
 				<h2 className="text-lg font-bold text-gray-800 mb-1">{item.name}</h2>
-				<p className="text-gray-500 text-xs mb-2">{item.desc}</p>
 			</div>
-			{/* Context info */}
-			<div className="w-full px-4 mb-2">
-				<div className="flex flex-wrap justify-center gap-1 text-[11px]">
-					<span className="bg-blue-50 text-blue-700 px-2 py-0.5 rounded">
-						Company: {item.company}
-					</span>
-					<span className="bg-purple-50 text-purple-700 px-2 py-0.5 rounded">
-						Category: {item.category}
-					</span>
-					<span className="bg-pink-50 text-pink-700 px-2 py-0.5 rounded">
-						Made In: {item.madeIn}
-					</span>
-					<span className="bg-green-50 text-green-700 px-2 py-0.5 rounded">
-						Age: {item.ageCategory}
-					</span>
-					<span className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded">
-						Stock: {item.stock}
-					</span>
-					<span className="bg-orange-50 text-orange-700 px-2 py-0.5 rounded">
-						{item?.isPrivate ? `Owner: ${item.ownedBy}` : 'Public'}
-					</span>
-				</div>
-			</div>
+			{/* Description below image */}
+						<div className="w-full px-4 text-center mt-1 flex-1 flex items-center justify-center">
+							<p className="text-gray-500 text-xs mb-2 w-full bg-gray-100 rounded-lg border border-gray-200 px-3 py-2 shadow-sm">{item.desc}</p>
+						</div>
+				
+			
 			{/* Bottom actions */}
-			<div className="flex gap-2 mb-3 w-full justify-center">
+			<div className="flex gap-2 w-full justify-center absolute bottom-8 left-1/2 transform -translate-x-1/2">
 				<button
 					className="flex items-center gap-1 px-3 py-1 bg-red-50 text-red-700 rounded-lg hover:bg-red-200 transition font-medium text-xs"
 					onClick={handleDelete}
