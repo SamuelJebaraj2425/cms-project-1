@@ -12,6 +12,7 @@ import AddNewItem from '../pages/dashboard/AddNewItem';
 import DisplayAll from '../pages/dashboard/DisplayAll';
 import MyFavorites from '../pages/dashboard/MyFavorites';
 import MyItems from '../pages/dashboard/MyItems';
+import Profile from '../pages/dashboard/Profile';
 
 export default function AppRoutes() {
 	return (
@@ -36,6 +37,7 @@ export default function AppRoutes() {
 				<Route path="/dashboard/display" element={<DisplayAll />} />
 				<Route path="/dashboard/favorites" element={<MyFavorites />} />
 				<Route path="/dashboard/my-content" element={<MyItems />} />
+				<Route path="/dashboard/profile" element={<Profile />} />
 			</Route>
 
 			<Route path="*" element={<NotFound />} />
